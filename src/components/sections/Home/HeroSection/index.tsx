@@ -1,5 +1,6 @@
-import { Navbar } from '../../layout/Navbar'
-import heroImage from './../../../assets/bg-hero.png';
+
+import { Navbar } from '../../../layout/Navbar';
+import heroImage from './../../../../assets/bg-hero.png';
 
 export function HeroSection() {
   return (

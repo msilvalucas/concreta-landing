@@ -1,11 +1,11 @@
 
+import { BenefitsSection } from "../../components/sections/Home/BenefitsSection"
 import { Footer } from "../../components/layout/Footer"
-import { BenefitsSection } from "../../components/sections/BenefitsSection"
-import { HeroSection } from "../../components/sections/HeroSection"
-import { PartnersSection } from "../../components/sections/PartnersSection"
-import { RepresentativeSection } from "../../components/sections/RepresentativeSection"
-import { SolutionsSection } from "../../components/sections/SolutionsSection"
-import { TestimonialsSection } from "../../components/sections/TestimonialsSection"
+import { HeroSection } from "../../components/sections/Home/HeroSection"
+import { PartnersSection } from "../../components/sections/Home/PartnersSection"
+import { RepresentativeSection } from "../../components/sections/Home/RepresentativeSection"
+import { SolutionsSection } from "../../components/sections/Home/SolutionsSection"
+import { TestimonialsSection } from "../../components/sections/Home/TestimonialsSection"
 
 export const Home = () => {
   return (
