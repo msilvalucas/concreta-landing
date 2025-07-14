@@ -11,6 +11,7 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/quero-ser-representante" element={<BecomeRep />} />
+      <Route path="/consorcios" element={<BecomeRep />} />
       {/* <Route path="/para-voce" element={<ForIndividuals />} />
       <Route path="/para-empresas" element={<ForCompanies />} />
        */}
