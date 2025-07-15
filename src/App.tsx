@@ -11,8 +11,7 @@ function App() {
       <Route path="/quero-ser-representante" element={<BecomeRep />} />
       <Route path="/consorcios" element={<Consortium />} />
       {/* <Route path="/para-voce" element={<ForIndividuals />} />
-      <Route path="/para-empresas" element={<ForCompanies />} />
-      <Route path="/quero-ser-representante" element={<BecomeRep />} /> */}
+      <Route path="/para-empresas" element={<ForCompanies />} /> */}
     </Routes>
   )
 }
