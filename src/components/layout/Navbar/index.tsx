@@ -30,14 +30,16 @@ export function Navbar() {
 
         <ul className="hidden md:flex gap-6 items-center text-[#A8CDEE] font-medium text-sm relative">
           <li className="relative group">
-            <button className="hover:text-blue-400 flex items-center gap-1">
-              Para você <span className="text-xs">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 8C0 9.58225 0.469192 11.129 1.34824 12.4446C2.22729 13.7602 3.47672 14.7855 4.93853 15.391C6.40034 15.9965 8.00887 16.155 9.56072 15.8463C11.1126 15.5376 12.538 14.7757 13.6569 13.6569C14.7757 12.538 15.5376 11.1126 15.8463 9.56072C16.155 8.00887 15.9965 6.40034 15.391 4.93853C14.7855 3.47672 13.7602 2.22729 12.4446 1.34824C11.129 0.469192 9.58225 0 8 0C5.87897 0.00229405 3.84547 0.845886 2.34568 2.34568C0.845885 3.84547 0.00229405 5.87897 0 8ZM10.276 7.05733C10.526 7.30737 10.6664 7.64645 10.6664 8C10.6664 8.35355 10.526 8.69263 10.276 8.94267L7.16067 12.058L6.218 11.1153L9.33333 8L6.19267 4.85867L7.13333 3.916L10.276 7.05733Z" fill="#A8CDEE" />
-                </svg>
+            <Link to="/para-voce">
+              <button className="hover:text-blue-400 flex items-center gap-1">
+                Para você <span className="text-xs">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8C0 9.58225 0.469192 11.129 1.34824 12.4446C2.22729 13.7602 3.47672 14.7855 4.93853 15.391C6.40034 15.9965 8.00887 16.155 9.56072 15.8463C11.1126 15.5376 12.538 14.7757 13.6569 13.6569C14.7757 12.538 15.5376 11.1126 15.8463 9.56072C16.155 8.00887 15.9965 6.40034 15.391 4.93853C14.7855 3.47672 13.7602 2.22729 12.4446 1.34824C11.129 0.469192 9.58225 0 8 0C5.87897 0.00229405 3.84547 0.845886 2.34568 2.34568C0.845885 3.84547 0.00229405 5.87897 0 8ZM10.276 7.05733C10.526 7.30737 10.6664 7.64645 10.6664 8C10.6664 8.35355 10.526 8.69263 10.276 8.94267L7.16067 12.058L6.218 11.1153L9.33333 8L6.19267 4.85867L7.13333 3.916L10.276 7.05733Z" fill="#A8CDEE" />
+                  </svg>
 
-              </span>
-            </button>
+                </span>
+              </button>
+            </Link>
 
             <div className="absolute top-full left-0 mt-2 bg-[#1E2035] text-white rounded-md shadow-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
               <Link to="/fgts" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">

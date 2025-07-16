@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { BecomeRep } from "./pages/BecomeRep"
 import { Consortium } from "./pages/Consortium"
+import { ForIndividuals } from "./pages/ForIndividuals"
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/quero-ser-representante" element={<BecomeRep />} />
       <Route path="/consorcios" element={<Consortium />} />
-      {/* <Route path="/para-voce" element={<ForIndividuals />} />
+      <Route path="/para-voce" element={<ForIndividuals />} />
+      {/*
       <Route path="/para-empresas" element={<ForCompanies />} /> */}
     </Routes>
   )
