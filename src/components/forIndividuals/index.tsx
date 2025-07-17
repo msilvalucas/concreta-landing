@@ -3,13 +3,13 @@ import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { StepPersonalInfo } from './steps/StepPersonalInfo';
-// import { Step2Income } from './steps/Step2Income'
-// import { Step3CompanyAndCredit } from './steps/Step3CompanyAndCredit'
-// import { Step4Success } from './steps/Step4Success'
+import { StepIncome } from './steps/StepIncome';
+import { StepCompanyAndCredit } from './steps/StepCompanyAndCredit'
+import { StepSuccess } from './steps/StepSuccess'
 
 import { schemaStep1 } from './../../schemas/step1Schema'
-// import { schemaStep2 } from '@/schemas/step2Schema'
-// import { schemaStep3 } from '@/schemas/step3Schema'
+import { schemaStep2 } from './../../schemas/step2Schema'
+import { schemaStep3 } from './../../schemas/step3Schema'
 
 // Tipagem geral dos dados
 const defaultValues = {
@@ -28,9 +28,12 @@ const defaultValues = {
 
 const steps = [
   StepPersonalInfo,
+  StepIncome,
+  StepCompanyAndCredit,
+  StepSuccess
 ]
 
-const schemas = [schemaStep1]
+const schemas = [schemaStep1, schemaStep2, schemaStep3]
 
 export const ForIndividualsForm = () => {
   const [step, setStep] = useState(0)
@@ -64,28 +67,7 @@ export const ForIndividualsForm = () => {
           step === 2 ? methods.handleSubmit(handleFinalSubmit) : (e) => e.preventDefault()
         }
       >
-        <CurrentStep />
-
-        {step < 3 && (
-          <div className="flex justify-between mt-6 px-8">
-            {step > 0 && (
-              <button
-                type="button"
-                onClick={prevStep}
-                className="bg-zinc-400 text-white px-4 py-2 rounded-full"
-              >
-                Voltar
-              </button>
-            )}
-            <button
-              type="button"
-              onClick={nextStep}
-              className="bg-[#0E1022] text-white px-4 py-2 rounded-full ml-auto"
-            >
-              {step === 2 ? 'Enviar' : 'Continuar'}
-            </button>
-          </div>
-        )}
+        <CurrentStep onNext={nextStep} onBack={step > 0 ? prevStep : undefined} />
       </form>
     </FormProvider>
   )

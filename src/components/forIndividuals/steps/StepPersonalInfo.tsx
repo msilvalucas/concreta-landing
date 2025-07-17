@@ -12,8 +12,14 @@ const incomeOptions = [
   'Desempregado'
 ]
 
-export const StepPersonalInfo = () => {
-  const { register, watch, setValue } = useFormContext()
+type StepPersonalInfoProps = {
+  onNext: () => void
+  onBack?: () => void
+}
+
+export const StepPersonalInfo = ({ onNext, onBack }: StepPersonalInfoProps) => {
+  const { register, watch, setValue, formState: { errors } } = useFormContext()
+
   const selected = watch('incomeSources', [])
 
   const handleToggle = (value: string) => {
@@ -25,37 +31,44 @@ export const StepPersonalInfo = () => {
 
   return (
     <FormLayout imageSrc={bgForm} alt="Pessoa preenchendo formulário">
-      <h2 className="text-xl font-bold text-center text-[#0E1022] mb-4">Para você</h2>
+      <h2 className="text-4xl font-bold text-center text-[#0E1022] mb-4">Para você</h2>
 
-      {/* Progresso */}
-      <div className="flex justify-center gap-2 text-[#0E1022] text-lg font-medium mb-6">
-        <span className="bg-[#0E1022] text-white rounded-full w-6 h-6 flex items-center justify-center">1</span>
-        <span className="border-t border-[#0E1022] w-6 mt-3" />
-        <span className="rounded-full w-6 h-6 border border-[#0E1022] flex items-center justify-center">2</span>
-        <span className="border-t border-[#0E1022] w-6 mt-3" />
-        <span className="rounded-full w-6 h-6 border border-[#0E1022] flex items-center justify-center">3</span>
+      <div className="w-full flex justify-center gap-2 text-[#0E1022] text-lg font-medium mb-6">
+        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">1</span>
+        <span className="border-t border-[#0E1022] w-34 mt-5" />
+        <span className="rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">2</span>
+        <span className="border-t border-[#0E1022] w-34 mt-5" />
+        <span className="rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">3</span>
       </div>
 
-      {/* Inputs */}
-      <label className="text-[#0E1022] text-sm">Nome</label>
+      <label className="text-[#0E1022] text-base font-bold mb-1">Nome</label>
       <input
         {...register('name')}
-        className="w-full p-3 rounded-md border border-zinc-300 mb-2"
+        className="bg-white w-full p-3 rounded-md border border-zinc-300 mb-2"
       />
+      {errors.name && (
+        <p className="text-red-600 text-sm mb-2">{errors.name.message as string}</p>
+      )}
 
-      <label className="text-[#0E1022] text-sm">E-mail</label>
+      <label className="text-[#0E1022] text-base font-bold mb-1">E-mail</label>
       <input
         {...register('email')}
-        className="w-full p-3 rounded-md border border-zinc-300 mb-2"
+        className="bg-white w-full p-3 rounded-md border border-zinc-300 mb-2"
       />
+      {errors.email && (
+        <p className="text-red-600 text-sm mb-2">{errors.email.message as string}</p>
+      )}
 
-      <label className="text-[#0E1022] text-sm">Telefone</label>
+      <label className="text-[#0E1022] text-base font-bold mb-1">Telefone</label>
       <input
         {...register('phone')}
-        className="w-full p-3 rounded-md border border-zinc-300 mb-4"
+        className="bg-white w-full p-3 rounded-md border border-zinc-300 mb-4"
       />
+      {errors.phone && (
+        <p className="text-red-600 text-sm mb-2">{errors.phone.message as string}</p>
+      )}
 
-      <label className="text-[#0E1022] text-sm mb-1">Qual é a sua fonte de renda?</label>
+      <label className="text-[#0E1022] text-base font-bold mb-1">Qual é a sua fonte de renda?</label>
       <div className="space-y-2">
         {incomeOptions.map((option) => (
           <label key={option} className="flex items-center gap-2 text-[#0E1022] text-sm">
@@ -67,8 +80,32 @@ export const StepPersonalInfo = () => {
             />
             {option}
           </label>
+
         ))}
+        {errors.incomeSources && (
+          <p className="text-red-600 text-sm mt-1">{errors.incomeSources.message as string}</p>
+        )}
       </div>
+
+      <div className={`flex mt-6 border ${onBack ? 'justify-between' : 'justify-center'}`}>
+        {onBack && (
+          <button
+            type="button"
+            onClick={onBack}
+            className="w-1/2 bg-zinc-400 text-white px-4 py-2 rounded mr-2"
+          >
+            Voltar
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={onNext}
+          className={`${onBack ? 'w-1/2' : 'w-2/3'} bg-[#0E1022] text-white px-4 py-2 rounded`}
+        >
+          Continuar
+        </button>
+      </div>
+
     </FormLayout>
   )
 }
