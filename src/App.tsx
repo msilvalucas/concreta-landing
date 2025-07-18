@@ -4,6 +4,7 @@ import { Home } from "./pages/Home"
 import { BecomeRep } from "./pages/BecomeRep"
 import { Consortium } from "./pages/Consortium"
 import { ForIndividuals } from "./pages/ForIndividuals"
+import { ForCompanies } from "./pages/ForCompanies"
 
 function App() {
   return (
@@ -12,8 +13,7 @@ function App() {
       <Route path="/quero-ser-representante" element={<BecomeRep />} />
       <Route path="/consorcios" element={<Consortium />} />
       <Route path="/para-voce" element={<ForIndividuals />} />
-      {/*
-      <Route path="/para-empresas" element={<ForCompanies />} /> */}
+      <Route path="/para-empresas" element={<ForCompanies />} />
     </Routes>
   )
 }
