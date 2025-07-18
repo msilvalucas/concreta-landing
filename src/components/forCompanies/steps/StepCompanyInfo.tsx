@@ -1,37 +1,38 @@
 import { useFormContext } from 'react-hook-form'
-import { FormLayout } from './../../common/FormLayout'
+import { FormLayout } from '../../common/FormLayout'
+import bgForm from './../../../assets/bg-forCompany.png'
 
-import bgForm from './../../../assets/bg-step-one.png';
-
-const incomeOptions = [
-  'Sou CLT',
-  'Sou autônomo',
-  'Sou empresário',
-  'Recebo aposentadoria/pensão',
-  'Sou funcionário público',
-  'Desempregado'
+const originOptions = [
+  'Sou fornecedor da Drogaria Araújo e quero crédito',
+  'Sou fornecedor da Copasa e quero crédito',
+  'Sou responsável por uma empresa e quero crédito'
 ]
 
-type StepPersonalInfoProps = {
+type StepCompanyInfoProps = {
   onNext: () => void
   onBack?: () => void
 }
 
-export const StepPersonalInfo = ({ onNext, onBack }: StepPersonalInfoProps) => {
-  const { register, watch, setValue, formState: { errors } } = useFormContext()
+export const StepCompanyInfo = ({ onNext, onBack }: StepCompanyInfoProps) => {
+  const {
+    register,
+    watch,
+    setValue,
+    formState: { errors }
+  } = useFormContext()
 
-  const selected = watch('incomeSources', [])
+  const selectedOrigins = watch('customerOrigin', [])
 
-  const handleToggle = (value: string) => {
-    const current = new Set(selected)
+  const handleToggleOrigin = (value: string) => {
+    const current = new Set(selectedOrigins)
     if (current.has(value)) current.delete(value)
     else current.add(value)
-    setValue('incomeSources', Array.from(current))
+    setValue('customerOrigin', Array.from(current))
   }
 
   return (
-    <FormLayout imageSrc={bgForm} alt="Pessoa preenchendo formulário">
-      <h2 className="text-4xl font-bold text-center text-[#0E1022] mb-4">Para você</h2>
+    <FormLayout imageSrc={bgForm} alt="Equipe reunida em uma mesa">
+      <h2 className="text-4xl font-bold text-center text-[#0E1022] mb-4">Para empresas</h2>
 
       <div className="w-full flex justify-center gap-2 text-[#0E1022] text-lg font-medium mb-6">
         <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">1</span>
@@ -46,44 +47,37 @@ export const StepPersonalInfo = ({ onNext, onBack }: StepPersonalInfoProps) => {
         {...register('name')}
         className="bg-white w-full p-3 rounded-md border border-zinc-300 mb-2"
       />
-      {errors.name && (
-        <p className="text-red-600 text-sm mb-2">{errors.name.message as string}</p>
-      )}
+      {errors.name && <p className="text-red-600 text-sm mb-2">{errors.name.message as string}</p>}
 
       <label className="text-[#0E1022] text-base font-bold mb-1">E-mail</label>
       <input
         {...register('email')}
         className="bg-white w-full p-3 rounded-md border border-zinc-300 mb-2"
       />
-      {errors.email && (
-        <p className="text-red-600 text-sm mb-2">{errors.email.message as string}</p>
-      )}
+      {errors.email && <p className="text-red-600 text-sm mb-2">{errors.email.message as string}</p>}
 
       <label className="text-[#0E1022] text-base font-bold mb-1">Telefone</label>
       <input
         {...register('phone')}
         className="bg-white w-full p-3 rounded-md border border-zinc-300 mb-4"
       />
-      {errors.phone && (
-        <p className="text-red-600 text-sm mb-2">{errors.phone.message as string}</p>
-      )}
+      {errors.phone && <p className="text-red-600 text-sm mb-2">{errors.phone.message as string}</p>}
 
-      <label className="text-[#0E1022] text-base font-bold mb-1">Qual é a sua fonte de renda?</label>
+      <label className="text-[#0E1022] text-base font-bold mb-1">Origem do Cliente</label>
       <div className="space-y-2">
-        {incomeOptions.map((option) => (
+        {originOptions.map((option) => (
           <label key={option} className="flex items-center gap-2 text-[#0E1022] text-sm">
             <input
               type="checkbox"
-              checked={selected?.includes(option)}
-              onChange={() => handleToggle(option)}
+              checked={selectedOrigins?.includes(option)}
+              onChange={() => handleToggleOrigin(option)}
               className="w-4 h-4"
             />
             {option}
           </label>
-
         ))}
-        {errors.incomeSources && (
-          <p className="text-red-600 text-sm mt-1">{errors.incomeSources.message as string}</p>
+        {errors.customerOrigin && (
+          <p className="text-red-600 text-sm mt-1">{errors.customerOrigin.message as string}</p>
         )}
       </div>
 
@@ -105,7 +99,6 @@ export const StepPersonalInfo = ({ onNext, onBack }: StepPersonalInfoProps) => {
           Continuar
         </button>
       </div>
-
     </FormLayout>
   )
 }
