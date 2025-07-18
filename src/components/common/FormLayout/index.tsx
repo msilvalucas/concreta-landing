@@ -6,7 +6,7 @@ type FormLayoutProps = {
 
 export const FormLayout = ({ children, imageSrc, alt }: FormLayoutProps) => {
   return (
-    <div className="container mx-auto mt-16 mb-16 gap-6 flex flex-col md:flex-row bg-white rounded-lg overflow-hidden">
+    <div className="container mx-auto mb-8 gap-6 flex flex-col md:flex-row bg-white rounded-lg overflow-hidden">
       <div className="md:w-1/2">
         <img
           src={imageSrc}
