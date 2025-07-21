@@ -55,9 +55,10 @@ const invoiceOptions = ['Sim', 'Não']
 
 type Props = {
   onBack: () => void
+  onNext: () => void
 }
 
-export const StepCompanyDetailsAdvanced = ({ onBack }: Props) => {
+export const StepCompanyDetailsAdvanced = ({ onBack, onNext }: Props) => {
   const { register, watch, setValue, formState: { errors } } = useFormContext()
 
   const checkboxGroup = (key: string, options: string[]) => {
@@ -121,13 +122,21 @@ export const StepCompanyDetailsAdvanced = ({ onBack }: Props) => {
       <div className="space-y-2 mb-6">{checkboxGroup('hasInvoices', invoiceOptions)}</div>
       {errors.hasInvoices && <p className="text-red-600 text-sm">{errors.hasInvoices.message as string}</p>}
 
-      <div className="flex mt-4 border justify-between">
+      <div className="flex mt-4 gap-6 justify-between">
         <button
           type="button"
           onClick={onBack}
-          className="w-full bg-zinc-400 text-white px-4 py-2 rounded"
+          className="w-1/2 bg-zinc-400 text-white px-4 py-2 rounded"
         >
           Voltar
+        </button>
+
+        <button
+          type="button"
+          onClick={onNext}
+          className="w-1/2 bg-[#0E1022] text-white px-4 py-2 rounded"
+        >
+          Continuar
         </button>
       </div>
     </FormLayout>

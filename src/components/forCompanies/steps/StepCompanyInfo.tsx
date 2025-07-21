@@ -81,7 +81,7 @@ export const StepCompanyInfo = ({ onNext, onBack }: StepCompanyInfoProps) => {
         )}
       </div>
 
-      <div className={`flex mt-6 border ${onBack ? 'justify-between' : 'justify-center'}`}>
+      <div className={`flex mt-6 ${onBack ? 'justify-between' : 'justify-center'}`}>
         {onBack && (
           <button
             type="button"

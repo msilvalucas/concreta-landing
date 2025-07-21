@@ -42,16 +42,16 @@ export function Navbar() {
             </Link>
 
             <div className="absolute top-full left-0 mt-2 bg-[#1E2035] text-white rounded-md shadow-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
-              <Link to="/fgts" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">
+              <Link to="/para-voce" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">
                 Antecipação de FGTS
               </Link>
-              <Link to="/consorcios" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm font-semibold">
+              <Link to="/para-voce" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm font-semibold">
                 Compra de Consórcios
               </Link>
-              <Link to="/privado" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">
+              <Link to="/para-voce" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">
                 Consignado Privado
               </Link>
-              <Link to="/publico" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">
+              <Link to="/para-voce" className="block px-4 py-2 hover:bg-[#2c2f4d] text-sm">
                 Crédito Consignado Público <br /> Estadual e Federal
               </Link>
             </div>
