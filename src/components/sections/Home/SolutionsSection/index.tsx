@@ -68,15 +68,15 @@ export function SolutionsSection() {
   const [activeTab, setActiveTab] = useState<'individual' | 'business'>('individual')
 
   return (
-    <section className="container mx-auto py-16 px-4 sm:px-8 lg:px-24 bg-white">
+    <section className="container mx-auto py-4 px-4 sm:px-8 lg:px-24 bg-white">
       <h2 className="text-center text-2xl md:text-3xl font-extrabold text-neutral-900 mb-6">
         Tudo o que você precisa, agora.
       </h2>
 
-      <div className="flex justify-center gap-2 mb-12">
+      <div className="w-full flex justify-center gap-2 mb-12">
         <button
           onClick={() => setActiveTab('individual')}
-          className={`px-6 py-2 rounded-xl font-semibold ${activeTab === 'individual'
+          className={`w-full md:w-50 px-6 py-2 rounded-xl font-semibold ${activeTab === 'individual'
             ? 'bg-blue-200 text-blue-900'
             : 'border border-black text-black'
             }`}
@@ -85,7 +85,7 @@ export function SolutionsSection() {
         </button>
         <button
           onClick={() => setActiveTab('business')}
-          className={`px-6 py-2 rounded-xl font-semibold ${activeTab === 'business'
+          className={`w-full md:w-50 px-6 py-2 rounded-xl font-semibold ${activeTab === 'business'
             ? 'bg-blue-200 text-blue-900'
             : 'border border-black text-black'
             }`}

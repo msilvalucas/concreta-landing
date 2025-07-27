@@ -11,8 +11,8 @@ export function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="w-full px-4 mt-6 flex justify-center items-center z-50">
-      <nav className="container h-20 bg-[#0E1022] rounded-[15px] px-6 flex items-center justify-between shadow-md relative">
+    <header className="w-full md:px-4 md:mt-6 flex justify-center items-center z-50">
+      <nav className="w-full h-20 bg-[#0E1022] px-4 flex items-center justify-between shadow-md relative md:container md:rounded-[15px] md:px-6">
         <Link to="/" className="text-white font-extrabold text-xl mt-9">
           <svg className="h-40 w-auto" viewBox="0 0 246 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.2452 74.802C15.2452 66.8024 21.3861 61.0784 29.6498 61.0784C34.2373 61.0784 38.0662 62.7457 40.5672 65.7797L36.6244 69.4196C34.8432 67.3719 32.6064 66.3104 29.9528 66.3104C24.9872 66.3104 21.4612 69.7977 21.4612 74.802C21.4612 79.8063 24.9872 83.2935 29.9528 83.2935C32.6064 83.2935 34.8432 82.2321 36.6244 80.1479L40.5672 83.7878C38.0662 86.8583 34.2373 88.5256 29.6111 88.5256C21.3838 88.5256 15.2429 82.8015 15.2429 74.802H15.2452Z" fill="#FFFEFB" />
