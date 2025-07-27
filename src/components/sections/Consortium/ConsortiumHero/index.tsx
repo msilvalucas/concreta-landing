@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import mobileBg from './../../../../assets/mobile-consorcios.png';
 const schema = z.object({
   name: z.string().min(2, 'Informe o nome'),
   email: z.string().email('E-mail inválido'),
@@ -29,41 +30,39 @@ export const ConsortiumHero = () => {
 
   return (
     <section className="w-full relative bg-white">
-      {/* MOBILE IMAGE (somente mobile) */}
       <div className="md:hidden relative h-[420px] w-full">
         <img
-          src="https://placehold.co/600x535"
+          src={mobileBg}
           alt="Compra de Consórcios"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 z-10" />
-        <div className="absolute bottom-6 left-4 right-4 text-white z-20">
-          <h2 className="text-2xl font-bold">Compra de consórcios</h2>
-          <p className="text-sm mt-1">
-            Solução prática para quem busca transformar a cota em dinheiro sem precisar aguardar pela contemplação
-          </p>
+        <div className="absolute inset-0 z-10" />
+        <div className="absolute bottom-12 left-4 right-4 text-[#0E1022] z-20">
+          <h2 className="text-3xl font-bold mb-2">Compra de <br /> consórcios</h2>
+
+
+          <div className='w-[80%] bg-white opacity-75 p-2 rounded'>
+            <p className="text-base text-[#0E1022] mt-1">
+              Solução prática para quem busca transformar a cota em dinheiro sem precisar aguardar pela contemplação
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* CONTAINER DESKTOP */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-10 md:py-16">
-        {/* TEXTO (Desktop apenas) */}
-        <div className="hidden md:flex flex-col w-full max-w-[500px] pr-8 border">
-          <h2 className="text-4xl font-bold text-[#0E1022] mb-4">
-            Compra de Consórcios
-          </h2>
-          <p className="text-zinc-600 text-xl">
-            Solução prática para quem busca transformar a cota em dinheiro sem precisar aguardar pela contemplação
-          </p>
+      <div className="container mx-auto relative px-4 py-10 md:grid md:grid-cols-2 md:items-start md:gap-12">
+        <div className="flex flex-col gap-6">
+          <div>
+            <h2 className="hidden md:block text-4xl font-bold text-[#0E1022] mb-2">
+              Compra de Consórcios
+            </h2>
+            <p className="hidden md:block text-zinc-600 text-lg">
+              Solução prática para quem busca transformar a cota em dinheiro sem precisar aguardar pela contemplação
+            </p>
+          </div>
 
-
-        </div>
-
-        {/* FORMULÁRIO */}
-        <div className="relative z-30 -mt-20 md:mt-0 w-full max-w-[500px]">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-[#A8CDEE] p-6 rounded-lg space-y-4 shadow-lg"
+            className="bg-[#A8CDEE] p-6 rounded-lg space-y-4 shadow-lg z-21 mt-[-100px] md:mt-0"
           >
             <div>
               <label className="block text-base font-medium mb-1">Nome</label>
@@ -113,12 +112,11 @@ export const ConsortiumHero = () => {
           </form>
         </div>
 
-        {/* IMAGEM (somente desktop) */}
-        <div className="hidden md:flex w-full max-w-[420px]">
+        <div className="hidden md:block">
           <img
             src="https://placehold.co/600x535"
             alt="Compra de Consórcios"
-            className="rounded-lg object-cover w-full h-[420px]"
+            className="rounded-lg object-cover w-full h-[525px]"
           />
         </div>
       </div>

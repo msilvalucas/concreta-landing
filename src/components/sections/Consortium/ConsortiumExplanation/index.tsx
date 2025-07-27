@@ -3,11 +3,11 @@ import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 
 export const ConsortiumExplanation = () => {
   return (
-    <section className="bg-white py-12 px-4">
+    <section className="bg-white py-4 px-4">
       <div className="w-full container mx-auto space-y-6">
-        <h2 className="text-3xl font-bold text-[#0E1022]">Venda de Consórcios</h2>
+        <h2 className="text-3xl text-center md:text-left font-bold text-[#0E1022]">Venda de Consórcios</h2>
 
-        <p className="text-2xl text-zinc-700">
+        <p className="text-[20px] text-[#0E1022] text-center md:text-left">
           A venda de consórcio é uma modalidade de negociação em que o titular de uma cota
           de consórcio decide vender seu direito a essa cota para a Concreta FIDC. Esse tipo
           de transação é interessante para quem não deseja mais esperar pela contemplação no
