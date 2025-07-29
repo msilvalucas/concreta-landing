@@ -6,7 +6,7 @@ export const ForIndividuals = () => {
   return (
     <main>
       <Navbar />
-      <div className="w-full px-4 mt-6 flex justify-center items-center z-50">
+      <div className="w-full p-0 mt-0 md:px-4 sm:mt-6 flex justify-center items-center z-50">
         <div className="container mx-auto">
           <ForIndividualsForm />
         </div>

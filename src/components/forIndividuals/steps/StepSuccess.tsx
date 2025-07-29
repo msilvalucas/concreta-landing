@@ -6,7 +6,7 @@ export const StepSuccess = () => {
 
   return (
     <div
-      className="container mx-auto w-full h-[682px] my-16 bg-cover bg-center flex items-center justify-center rounded-4xl"
+      className="container mx-auto w-full h-[682px] md:my-16 bg-cover bg-center flex items-center justify-center md:rounded-4xl px-4"
       style={{ backgroundImage: `url(${bgSuccess})` }}
     >
       <div className="bg-[#F7E1B5]/80 text-center p-8 rounded-md max-w-[420px]">

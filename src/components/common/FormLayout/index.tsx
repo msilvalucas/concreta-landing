@@ -1,23 +1,42 @@
+// FormLayout.tsx
 type FormLayoutProps = {
   children: React.ReactNode
   imageSrc: string
   alt?: string
+  title?: string
+  description?: string
 }
 
 export const FormLayout = ({ children, imageSrc, alt }: FormLayoutProps) => {
   return (
-    <div className="container mx-auto mb-8 gap-6 flex flex-col md:flex-row bg-white rounded-lg overflow-hidden">
-      <div className="md:w-1/2">
+    <section className="w-full relative bg-white">
+      <div className="md:hidden relative h-[420px] w-full">
         <img
           src={imageSrc}
           alt={alt ?? 'Imagem'}
-          className="w-full h-[682px]"
+          className="absolute inset-0 w-full h-full object-cover"
         />
+        <div className="absolute inset-0 z-10" />
+        <div className="absolute bottom-24 left-4 right-4 text-white z-20">
+          <h2 className="text-3xl text-center font-bold">Pra você</h2>
+        </div>
       </div>
 
-      <div className="md:w-1/2 w-full bg-[#A8CDEE] p-8 space-y-4 flex flex-col justify-center rounded-lg">
-        {children}
+      <div className="container mx-auto relative px-4 py-10 md:grid md:grid-cols-2 md:items-stretch md:gap-12">
+        <div className="hidden md:block">
+          <img
+            src={imageSrc}
+            alt={alt ?? 'Imagem'}
+            className="rounded-lg object-cover w-full h-[525px]"
+          />
+        </div>
+
+        <div className="flex flex-col justify-center">
+          <div className="bg-[#A8CDEE] p-6 rounded-lg shadow-lg mt-[-100px] md:mt-0">
+            {children}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
