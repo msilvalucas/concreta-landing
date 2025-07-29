@@ -34,14 +34,20 @@ export const StepCompanyAndCredit = ({ onNext, onBack }: StepCompanyAndCreditPro
 
   return (
     <FormLayout imageSrc={bgForm} alt="Pessoa preenchendo formulário">
-      <h2 className="text-4xl font-bold text-center text-[#0E1022] mb-4">Para você</h2>
+      <h2 className="hidden md:block text-4xl font-bold text-center text-[#0E1022] mb-4">Para você</h2>
 
-      <div className="w-full flex justify-center gap-2 text-[#0E1022] text-lg font-medium mb-6">
-        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">1</span>
-        <span className="border-t border-[#0E1022] w-34 mt-5" />
-        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">2</span>
-        <span className="border-t border-[#0E1022] w-34 mt-5" />
-        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">3</span>
+      <div className="w-full flex justify-center items-center gap-4 text-[#0E1022] text-sm font-medium mb-6">
+        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0E1022] text-white text-xs">
+          1
+        </span>
+        <span className="flex-1 border-t border-[#0E1022]" />
+        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0E1022] text-white text-xs">
+          2
+        </span>
+        <span className="flex-1 border-t border-[#0E1022]" />
+        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0E1022] text-white text-xs">
+          3
+        </span>
       </div>
 
       <label className="text-[#0E1022] text-base font-bold mb-1">Qual é o nome da empresa em que você trabalha?</label>
