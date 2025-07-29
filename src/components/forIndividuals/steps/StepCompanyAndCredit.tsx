@@ -33,7 +33,7 @@ export const StepCompanyAndCredit = ({ onNext, onBack }: StepCompanyAndCreditPro
   }
 
   return (
-    <FormLayout imageSrc={bgForm} alt="Pessoa preenchendo formulário">
+    <FormLayout imageSrc={bgForm} alt="Pessoa preenchendo formulário" title='Pra Você'>
       <h2 className="hidden md:block text-4xl font-bold text-center text-[#0E1022] mb-4">Para você</h2>
 
       <div className="w-full flex justify-center gap-2 text-[#0E1022] text-lg font-medium mb-6">
@@ -41,7 +41,7 @@ export const StepCompanyAndCredit = ({ onNext, onBack }: StepCompanyAndCreditPro
         <span className="border-t border-[#0E1022] flex-1 mt-5 max-w-[80px]" />
         <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">2</span>
         <span className="border-t border-[#0E1022] flex-1 mt-5 max-w-[80px]" />
-        <span className="rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">3</span>
+        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">3</span>
       </div>
 
       <label className="text-[#0E1022] text-base font-bold mb-1">Qual é o nome da empresa em que você trabalha?</label>
