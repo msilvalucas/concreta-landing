@@ -83,15 +83,15 @@ export const StepCompanyDetailsAdvanced = ({ onBack, onNext }: Props) => {
   }
 
   return (
-    <FormLayout imageSrc={bgForm} alt="Formulário de dados avançados para empresas">
-      <h2 className="text-4xl font-bold text-center text-[#0E1022] mb-4">Para empresas</h2>
+    <FormLayout imageSrc={bgForm} alt="Formulário de dados avançados para empresas" title="Para empresas">
+      <h2 className="hidden md:block text-4xl font-bold text-center text-[#0E1022] mb-4">Para empresas</h2>
 
       <div className="w-full flex justify-center gap-2 text-[#0E1022] text-lg font-medium mb-6">
-        <span className="rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">1</span>
-        <span className="border-t border-[#0E1022] w-34 mt-5" />
-        <span className="rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">2</span>
-        <span className="border-t border-[#0E1022] w-34 mt-5" />
-        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">3</span>
+        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 flex items-center justify-center">1</span>
+        <span className="border-t border-[#0E1022] flex-1 mt-5 max-w-[80px]" />
+        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">2</span>
+        <span className="border-t border-[#0E1022] flex-1 mt-5 max-w-[80px]" />
+        <span className="bg-[#0E1022] text-white rounded-full w-10 h-10 border border-[#0E1022] flex items-center justify-center">3</span>
       </div>
 
       <label className="font-bold text-[#0E1022] mb-1">Faturamento médio mensal da empresa</label>

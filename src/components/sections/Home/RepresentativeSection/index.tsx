@@ -35,7 +35,7 @@ export function RepresentativeSection() {
   }, [])
 
   return (
-    <section className="container mx-auto py-12 bg-white text-[#0b0d21] text-center px-4 border">
+    <section className="container mx-auto py-12 bg-white text-[#0b0d21] text-center px-4">
       <h2 className="text-xl sm:text-2xl font-bold font-answeone mb-8">
         Seja um representante que faz acontecer
       </h2>
